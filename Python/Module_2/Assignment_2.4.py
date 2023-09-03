@@ -1,3 +1,11 @@
+"""
+2. Variables and interactive programs
+
+    2.4. Write a program that asks the user for three integer numbers.
+         The program prints out the sum, product, and average of the numbers.
+
+"""
+
 print(
     'Please input three integer numbers. '
     'Then I would calculate the sum, product, and average for you.'
