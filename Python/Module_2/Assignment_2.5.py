@@ -1,3 +1,17 @@
+"""
+2. Variables and interactive programs
+
+    2.5. Write a program that asks the user to enter a mass in medieval units:
+         talents (leiviskä), pounds (naula), and lots (luoti). The program
+         converts the input to full kilograms and grams and outputs the result
+         to the user:
+
+             - One talent is 20 pounds.
+             - One pound is 32 lots.
+             - One lot is 13,3 grams.
+
+"""
+
 talents = float(input('Enter talents: \n'))
 print()
 pounds = float(input('Enter pounds: \n'))
