@@ -1,3 +1,13 @@
+"""
+2. Variables and interactive programs
+
+    2.3. Write a program that asks the user for the length and width of a
+         rectangle. The program then prints out the perimeter and area of the
+         rectangle. The perimeter of a rectangle is the sum of the lengths of
+         each four sides.
+
+"""
+
 print(
     'Please input the length and width of a rectangle. '
     'Then I can calculate the perimeter and area of the rectangle.'
