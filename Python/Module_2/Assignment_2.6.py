@@ -1,3 +1,14 @@
+"""
+2. Variables and interactive programs
+
+    2.6. Write a program that draws two random combinations of numbers for a
+         combination lock:
+
+             - a 3-digit code where each number is between 0 and 9.
+             - a 4-digit code where each number is between 1 and 6.
+
+"""
+
 from random import randint
 
 three_digits = ''.join([str(randint(0, 9)) for item in range(3)])
