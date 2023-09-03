@@ -15,15 +15,8 @@
 """
 
 cabin_class = input(
-"""Could you please input the cabin class of the cruise ship?
-
-    LUX: upper-deck cabin with a balcony.
-    A: above the car deck, equipped with a window.
-    B: windowless cabin above the car deck.
-    C: windowless cabin below the car deck.
-
-Your cabin class:
-""").upper()
+    "Could you please input the cabin class of the cruise ship?\n"
+    "Your cabin class: ").upper()
 
 
 if cabin_class == 'LUX':
