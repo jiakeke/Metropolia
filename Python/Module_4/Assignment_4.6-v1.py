@@ -24,12 +24,15 @@
          x^2+y^2<1.).
 
 """
+import time
 from random import uniform
 
 print("Let's calculate an approximation for the value of pi (π).")
 number = int(input('Please input how many random points to generate.\n'))
 n = 0
 N = number
+
+start = time.time()
 
 while number > 0:
     x = uniform(-1, 1)
@@ -41,3 +44,4 @@ while number > 0:
 
 pi = n * 4 / N
 print(f'The approximation of pi is: {pi}')
+print(f'Running in {time.time()-start:.2f} seconds.')
