@@ -16,7 +16,7 @@ while length_inch >= 0:
             'Please input a length in inches and I can convert it to centimeters '
             'for you. Input a negative number to exit.\n'
         ))
-        if length_inch >= 0: 
+        if length_inch >= 0:
             length_cm = length_inch * 2.54
             print(f'{length_inch} inch = {length_cm} cm')
         else:
