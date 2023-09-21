@@ -15,9 +15,6 @@ def index():
             pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fi")
             result = pipe(text)
             if result:
-                print(text)
-                print(result)
                 text_fi = result[0].get('translation_text', '')
-
 
     return render_template('index.html', text=text, text_fi=text_fi)
