@@ -11,21 +11,22 @@
 """
 
 class Car:
-    current_speed = 0
+    speed = 0
     distance = 0
 
-    def __init__(self, plate_number, max_speed):
-        self.plate_number = plate_number
+    def __init__(self, plate, max_speed):
+        self.plate = plate
         self.max_speed = max_speed
 
     def __str__(self):
         return (
             f'Car:\n'
-            f'    Plate number: {self.plate_number}\n'
+            f'    Plate number: {self.plate}\n'
             f'    Maximum speed: {self.max_speed} km/h\n'
-            f'    Current speed: {self.current_speed} km/h\n'
-            f'    Rravelled distance: {self.distance} km\n'
+            f'    Speed: {self.speed} km/h\n'
+            f'    Travelled distance: {self.distance} km\n'
             )
 
-car = Car('ABC-123', 142)
-print(car)
+if __name__ == "__main__":
+    car = Car('ABC-123', 142)
+    print(car)
