@@ -38,6 +38,7 @@ class Building:
                  'take.'
             )
             return
+        print(f'The elevator {number}')
         return self.elevators[number].go_to_floor(target)
 
     def fire_alarm(self):
@@ -51,4 +52,7 @@ if __name__ == '__main__':
     building.run_elevator(2, 9)
     building.run_elevator(7,  45)
     building.run_elevator(1,  45)
+    building.run_elevator(1,  8)
+    building.run_elevator(0,  7)
     building.fire_alarm()
+
