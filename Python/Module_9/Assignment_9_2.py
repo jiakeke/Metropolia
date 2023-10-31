@@ -13,8 +13,9 @@
          print out the final speed. The travelled distance does not have to be
          updated yet.
 """
-
-from Assignment_9_1 import Car
+import sys
+sys.path.append("..")
+from Module_9.Assignment_9_1 import Car
 
 
 class CarAlpha(Car):
