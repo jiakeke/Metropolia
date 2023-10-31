@@ -22,9 +22,11 @@
 """
 
 import os, sys, time
+sys.path.append("..")
+print(sys.path)
 from random import randint
 from tabulate import tabulate
-from Assignment_9_3 import CarBeta
+from Module_9.Assignment_9_3 import CarBeta
 
 
 class CarGamma(CarBeta):
