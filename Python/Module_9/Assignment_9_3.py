@@ -9,7 +9,9 @@
          travelled distance to 2090 km.
 """
 
-from Assignment_9_2 import CarAlpha
+import sys
+sys.path.append("..")
+from Module_9.Assignment_9_2 import CarAlpha
 
 
 class CarBeta(CarAlpha):
