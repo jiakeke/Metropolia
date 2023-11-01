@@ -15,43 +15,44 @@ import requests
 
 api_key = '5d7c3e3bf016c6f51ff738b0eecb9e51'
 
+if __name__ == '__main__':
 
-while 1:
-    print(
-        'Please input your city name to get the weachter information'
-        'Leave a blank to quit.'
-    )
-
-    city = input('City: ')
-
-    if not city:
-        break
-
-    geo_api_url = (
-        f'http://api.openweathermap.org/geo/1.0/direct?q={city}'
-        f'&limit=5&appid={api_key}'
-    )
-
-    req_city = requests.get(geo_api_url)
-    if req_city.status_code == 200:
-        data = req_city.json()
-        name = data[0]['name']
-        lat = data[0]['lat']
-        lon = data[0]['lon']
-        weather_api_url = (
-            'https://api.openweathermap.org/data/2.5/weather?units=metric'
-            f'&lat={lat}'
-            f'&lon={lon}'
-            f'&appid={api_key}'
-
+    while 1:
+        print(
+            'Please input your city name to get the weachter information'
+            'Leave a blank to quit.'
         )
-        req_weather = requests.get(weather_api_url)
-        if req_weather.status_code == 200:
-            data_weather = req_weather.json()
-            weather = data_weather['weather'][0]
-            main = weather['main']
-            description = weather['description']
-            temp = data_weather['main']['temp']
-            print(f'The weather of {name}:')
-            print(f'    Weather: {main}, {description}')
-            print(f'    Temperature: {temp}')
+
+        city = input('City: ')
+
+        if not city:
+            break
+
+        geo_api_url = (
+            f'http://api.openweathermap.org/geo/1.0/direct?q={city}'
+            f'&limit=5&appid={api_key}'
+        )
+
+        req_city = requests.get(geo_api_url)
+        if req_city.status_code == 200:
+            data = req_city.json()
+            name = data[0]['name']
+            lat = data[0]['lat']
+            lon = data[0]['lon']
+            weather_api_url = (
+                'https://api.openweathermap.org/data/2.5/weather?units=metric'
+                f'&lat={lat}'
+                f'&lon={lon}'
+                f'&appid={api_key}'
+
+            )
+            req_weather = requests.get(weather_api_url)
+            if req_weather.status_code == 200:
+                data_weather = req_weather.json()
+                weather = data_weather['weather'][0]
+                main = weather['main']
+                description = weather['description']
+                temp = data_weather['main']['temp']
+                print(f'The weather of {name}:')
+                print(f'    Weather: {main}, {description}')
+                print(f'    Temperature: {temp}')
