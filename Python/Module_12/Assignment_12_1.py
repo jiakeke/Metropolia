@@ -9,7 +9,9 @@
 
 import requests
 
-api_url = 'https://api.chucknorris.io/jokes/random'
-req = requests.get(api_url)
-if req.status_code == 200:
-    print(req.json()['value'])
+if __name__ == '__main__':
+
+    api_url = 'https://api.chucknorris.io/jokes/random'
+    req = requests.get(api_url)
+    if req.status_code == 200:
+        print(req.json()['value'])
