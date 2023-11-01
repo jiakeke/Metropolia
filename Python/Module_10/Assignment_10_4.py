@@ -44,13 +44,13 @@ class Race:
 
     def race_start(self):
         hours = 0
-        while race.race_finished() == False:
+        while self.race_finished() == False:
             hours += 1
             time.sleep(0.1)
             clear_screen()
             print(f'The race lasted {hours} hours.')
             self.hour_passes()
-            if hours % 10 == 0:
+            if hours % 10 == 0 and not self.race_finished():
                 self.print_status()
                 time.sleep(1)
 
