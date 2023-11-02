@@ -13,7 +13,7 @@
 
 import requests
 
-api_key = '5d7c3e3bf016c6f51ff738b0eecb9e51'
+api_key = 'PLEASE_PROVIDE_A_CORRECT_API_KEY'
 
 if __name__ == '__main__':
 
@@ -34,6 +34,17 @@ if __name__ == '__main__':
         )
 
         req_city = requests.get(geo_api_url)
+        error_text = req_city.json()
+        if req_city.status_code == 401 and \
+           error_text['message'].startswith('Invalid API'):
+            print(f"{error_text['cod']}: {error_text['message']}\n")
+            print("Warning!\n")
+            print(
+                "It's not good idea to submit some SECRET information into\n"
+                "github. Since it's published to everyone. So if you want to\n"
+                "run the program correctly, please change the api_key at the\n"
+                "top of the program file to the correct value.\n"
+            )
         if req_city.status_code == 200:
             data = req_city.json()
             name = data[0]['name']
