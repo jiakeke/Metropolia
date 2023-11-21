@@ -26,3 +26,7 @@ def prime_number(number):
             isPrime = True
     context = {'Number': number, 'isPrime': isPrime}
     return context
+
+
+if __name__ == '__main__':
+    app.run()

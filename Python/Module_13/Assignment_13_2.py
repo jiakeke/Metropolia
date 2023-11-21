@@ -59,3 +59,7 @@ def airport(icao):
         }
         return context
     return {'ICAO': icao, 'Status': 'Not Found'}
+
+
+if __name__ == '__main__':
+    app.run()
