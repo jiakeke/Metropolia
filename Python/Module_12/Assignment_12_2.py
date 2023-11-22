@@ -28,42 +28,22 @@ if __name__ == '__main__':
         if not city:
             break
 
-        geo_api_url = (
-            f'http://api.openweathermap.org/geo/1.0/direct?q={city}'
-            f'&limit=5&appid={api_key}'
+        weather_api_url = (
+            'https://api.openweathermap.org/data/2.5/weather?units=metric'
+            f'&q={city}'
+            f'&appid={api_key}'
+
         )
-
-        req_city = requests.get(geo_api_url)
-        error_text = req_city.json()
-        if req_city.status_code == 401 and \
-           error_text['message'].startswith('Invalid API'):
-            print(f"{error_text['cod']}: {error_text['message']}\n")
-            print("Warning!\n")
-            print(
-                "It's not good idea to submit some SECRET information into\n"
-                "github. Since it's published to everyone. So if you want to\n"
-                "run the program correctly, please change the api_key at the\n"
-                "top of the program file to the correct value.\n"
-            )
-        if req_city.status_code == 200:
-            data = req_city.json()
-            name = data[0]['name']
-            lat = data[0]['lat']
-            lon = data[0]['lon']
-            weather_api_url = (
-                'https://api.openweathermap.org/data/2.5/weather?units=metric'
-                f'&lat={lat}'
-                f'&lon={lon}'
-                f'&appid={api_key}'
-
-            )
-            req_weather = requests.get(weather_api_url)
-            if req_weather.status_code == 200:
-                data_weather = req_weather.json()
-                weather = data_weather['weather'][0]
-                main = weather['main']
-                description = weather['description']
-                temp = data_weather['main']['temp']
-                print(f'The weather of {name}:')
-                print(f'    Weather: {main}, {description}')
-                print(f'    Temperature: {temp}')
+        req_weather = requests.get(weather_api_url)
+        if req_weather.status_code == 200:
+            data_weather = req_weather.json()
+            weather = data_weather['weather'][0]
+            main = weather['main']
+            description = weather['description']
+            temp = data_weather['main']['temp']
+            print(f'The weather of {city}:')
+            print(f'    Weather: {main}, {description}')
+            print(f'    Temperature: {temp}')
+        else:
+            print(f'{req_weather.reason}: ')
+            print(req_weather.json()['message'])
