@@ -7,7 +7,7 @@ if (year == 0) {
     year_type = ' not ';
 } else if (year % 400 == 0){
     year_type = '';
-} else if (year % 4 == 0 & year % 100 != 0) {
+} else if (year % 4 == 0 && year % 100 != 0) {
     year_type = '';
 } else {
     year_type = ' not ';
