@@ -27,10 +27,19 @@ document.querySelector('form').addEventListener(
                 link.innerHTML = item.show.url;
                 article.appendChild(link);
 
+                let new_line = document.createElement('br');
+                article.appendChild(new_line);
+
                 let img = document.createElement('img');
                 img.setAttribute('src', item.show.image?.medium);
                 img.setAttribute('alt', item.show.name);
-                article.append(img);
+
+                let link_img = document.createElement('a');
+                link_img.setAttribute('href', item.show.url);
+                link_img.setAttribute('target', '_blank');
+
+                link_img.append(img);
+                article.appendChild(link_img);
 
                 let summary = document.createElement('div');
                 summary.innerHTML = item.show.summary;
