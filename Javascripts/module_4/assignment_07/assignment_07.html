@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Esimerkki 4</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Route to Karaportti 2</h1>
+        <form id="route_form" method="POST">
+        From: <input type="text" name="origination" id="origination">
+        To: Karaportti 2
+        <input type="submit" id="search" value="Show Route">
+        </form>
+        <label>Time: </label><span id="dt"></span> 
+        <div id="map" style="margin-top: 20px; width: 100%; height: 600px;"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+        <script src="Polyline.encoded.js"></script>
+        <script src="assignment_07.js"></script>
+    </body>
+
+</html>
